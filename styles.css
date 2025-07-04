@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --accent: #75a5db;
+    --main-1: #ffd6e7;
+    --main-2: #e0e0e0;
+}
+
+.container {
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr 6fr;
+}
+
+/* -- SIDE NAV -- */
+.side-nav {
+    background-color: var(--accent);
+    grid-row: 1 / -1;
+}
+
+/* -- TOP NAV -- */
+.top-nav {
+    background-color: var(--main-1);
+}
+
+/* -- CONTENT -- */
+.main {
+    background-color: var(--main-2);
+}
