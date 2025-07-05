@@ -18,10 +18,10 @@ body {
 }
 
 :root {
-    --accent: #507bb3;
-    --main-1: #ffd6e7;
-    --main-2: #f3f3f3;
-    --bg: #e0e0e0;
+    --accent: #557fb4;
+    --main-1: #ffffff79;
+    --main-2: #ffffffa1;
+    --bg: #0000002d;
 }
 
 .container {
@@ -45,36 +45,46 @@ input {
 
 /* -- SIDE NAV -- */
 .side-nav {
-    background-color: var(--accent);
+    background-color: #ffffffd2;
     grid-row: 1 / -1;
 
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    gap: 10px;
+    gap: 30px;
+
+    margin-top: 5px;
 }
 
-.logo, 
-.side-nav-menu {
-    border: solid 1px black; /* Remove from final */
-    margin-bottom: 10px;
+.fa {
+    margin-right: 15px;
 }
 
-.logo > img, .fa {
-    margin-right: 5px;
+.logo {
+    font-family: "Silkscreen", sans-serif;
+    font-size: 18px;
 }
 
 .side-nav-menu {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
+
+    font-size: 14px;
+}
+
+.side-nav-menu li {
+    list-style: none;
+}
+
+.side-nav-menu i {
+    color: var(--accent);
 }
 
 /* -- TOP NAV -- */
 .top-nav {
     /* Frosted glass effect from https://css.glass */
-    background: #ffffffa1;
-    box-shadow: 0 2.5px 5px #00000054;
+    background: var(--main-2);
     backdrop-filter: blur(6.4px);
 }
 
@@ -140,6 +150,8 @@ input {
     display: grid;
     grid-template-columns: max(200px, 60%) 1fr;
     gap: 10px;
+
+    box-shadow: 1px 0 3px 3px var(--bg) inset;
 }
 
 .main h2 {
@@ -162,7 +174,7 @@ input {
     border-radius: 5px;
 
     /* Frosted glass effect from https://css.glass */
-    background: #ffffff4a;
+    background: var(--main-1);
     box-shadow: 0 4px 20px #00000018;
     backdrop-filter: blur(6.4px);
 }
