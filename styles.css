@@ -14,7 +14,7 @@
     height: 100vh;
 
     display: grid;
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: auto 5fr;
     grid-template-rows: 1fr 6fr;
 }
 
@@ -22,6 +22,31 @@
 .side-nav {
     background-color: var(--accent);
     grid-row: 1 / -1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.logo {
+
+}
+
+.logo, .menu {
+    border: solid 1px black; /* Remove from final */
+
+    margin: 10px;
+}
+
+.logo > img, .fa {
+    margin-right: 5px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 /* -- TOP NAV -- */
