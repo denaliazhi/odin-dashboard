@@ -28,14 +28,14 @@ body {
     height: 100vh;
 
     display: grid;
-    grid-template-columns: auto 5fr;
+    grid-template-columns: max(165px, 15%) auto;
     grid-template-rows: 1fr 6fr;
 }
 
 .top-nav, 
 .side-nav, 
 .main {
-    padding: 10px 20px;
+    padding: 25px 35px;
 }
 
 button,
@@ -78,7 +78,7 @@ input {
 }
 
 .side-nav-menu i {
-    color: var(--accent);
+    color: #253d5ac4;
 }
 
 /* -- TOP NAV -- */
@@ -106,13 +106,18 @@ input {
     align-items: center;
 }
 
+.search {
+    width: 100%;
+}
+
 .search button {
     background: none;
 }
 
 .search input {
-    border-radius: 20px;
+    width: max(210px, 50%);
     height: 15px;
+    border-radius: 20px;
     box-shadow: 2px 1px 1px .5px #00000023 inset;
 }
 
@@ -149,6 +154,8 @@ input {
 .main {
     display: grid;
     grid-template-columns: max(200px, 60%) 1fr;
+    align-items: start;
+    grid-auto-rows: minmax(min-content, 1fr);
     gap: 10px;
 
     box-shadow: 1px 0 3px 3px var(--bg) inset;
