@@ -5,6 +5,13 @@
     box-sizing: border-box;
 }
 
+html {
+    background-image: url("gradient-bg.avif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 body {
     font-family: "Open Sans", Arial, sans-serif;
     font-size: 14px;
@@ -13,7 +20,7 @@ body {
 :root {
     --accent: #507bb3;
     --main-1: #ffd6e7;
-    --main-2: #fff;
+    --main-2: #f3f3f3;
     --bg: #e0e0e0;
 }
 
@@ -29,6 +36,11 @@ body {
 .side-nav, 
 .main {
     padding: 10px 20px;
+}
+
+button,
+input {
+    border: none;
 }
 
 /* -- SIDE NAV -- */
@@ -60,16 +72,19 @@ body {
 
 /* -- TOP NAV -- */
 .top-nav {
-    background-color: var(--main-1);
-}
-
-.top-nav div {
-    border: solid 1px black; /* Remove later */
+    /* Frosted glass effect from https://css.glass */
+    background: #ffffffa1;
+    box-shadow: 0 2.5px 5px #00000054;
+    backdrop-filter: blur(6.4px);
 }
 
 .top-nav > div {
     display: flex;
     justify-content: space-between;
+}
+
+.top-nav > div:first-child {
+    margin-bottom: 10px;
 }
 
 .search, 
@@ -81,19 +96,47 @@ body {
     align-items: center;
 }
 
+.search button {
+    background: none;
+}
+
+.search input {
+    border-radius: 20px;
+    height: 15px;
+    box-shadow: 2px 1px 1px .5px #00000023 inset;
+}
+
+.profile img {
+    border-radius: 50%;
+    border: solid 1.5px var(--accent);
+}
+
+.greeting p:first-child {
+    font-size: 12px;
+    font-weight: bold;
+}
+
 .greeting p:last-child {
     margin-top: 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.project-btns {
+    align-items: end;
 }
 
 .project-btns button {
-    padding: 5px 10px;
+    padding: 5px 15px;
+    background-color: var(--accent);
+    border-radius: 20px;
+
+    color: #fff;
+    font-weight: bold;
 }
 
 /* -- MAIN -- */
 .main {
-    background-image: url("gradient-bg.avif");
-    background-size: cover;
-
     display: grid;
     grid-template-columns: max(200px, 60%) 1fr;
     gap: 10px;
@@ -120,9 +163,8 @@ body {
 
     /* Frosted glass effect from https://css.glass */
     background: #ffffff4a;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px #00000018;
     backdrop-filter: blur(6.4px);
-    -webkit-backdrop-filter: blur(6.4px);
 }
 
 .hearted {
