@@ -1,13 +1,20 @@
+/* -- GENERAL -- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+body {
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 14px;
+}
+
 :root {
-    --accent: #75a5db;
+    --accent: #507bb3;
     --main-1: #ffd6e7;
-    --main-2: #e0e0e0;
+    --main-2: #fff;
+    --bg: #e0e0e0;
 }
 
 .container {
@@ -83,21 +90,18 @@
 }
 
 /* -- MAIN -- */
-.main * {
-    border: solid 1px black; /* Remove later */
-}
-
 .main {
-    background-color: var(--main-2);
+    background-image: url("gradient-bg.avif");
+    background-size: cover;
 
     display: grid;
-    grid-template-columns: max(200px, 65%) 1fr;
+    grid-template-columns: max(200px, 60%) 1fr;
     gap: 10px;
 }
 
 .main h2 {
-    font-size: 18px;
-    margin-bottom: 5px;
+    font-size: 16px;
+    margin: 10px 0 5px;
 }
 
 .projects {
@@ -106,37 +110,91 @@
 
 .project-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 250px);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 10px;
 }
 
 .card {
-    width: 250px;
-    height: 150px;
+    padding: 20px 15px;
+    border-radius: 5px;
+
+    /* Frosted glass effect from https://css.glass */
+    background: #ffffff4a;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.4px);
+    -webkit-backdrop-filter: blur(6.4px);
 }
 
-.card > div {
+.hearted {
+    border-left: 3px solid var(--accent);
+}
+
+.fa-heart {
+    color: var(--accent);
+}
+
+.card h3 {
+    font-size: 16px;
+}
+
+.card-item h4 {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.card-item p {
+    font-size: 12px;
+}
+
+.project-container .card {
+    height: 150px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-container .card > div {
     margin-top: 10px;
     text-align: right;
+
+    align-self: end;
 }
 
-.trends > div,
-.announcements > div {
+.announcements .card,
+.trends .card,
+.trends .card-item {
     display: flex;
     gap: 5px;
 }
 
-.announcements > div {
+.announcements .card,
+.trends .card {
     flex-direction: column;
 }
 
-/* .announcements > div div:nth-child(-n + 2) {
-    padding-bottom: 5px;
-    border-bottom: 1px solid blue;
-} */
+.announcements .card-item:nth-child(-n + 2) {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--bg);
+}
 
-.card, 
-.announcements > div,
-.trends > div {
-    padding: 5px;
+.announcements a {
+    text-decoration: none;
+    color: black;
+}
+
+.trends .card-item {
+    align-items: center;
+    gap: 10px;
+}
+
+.trends .card-item img {
+    border-radius: 50%;
+    border: 1px solid var(--bg);
+}
+
+.trends .card-item p:first-child {
+    font-weight: bold;
+    margin: 5px 0 2.5px;
 }
