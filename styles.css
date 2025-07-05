@@ -29,11 +29,7 @@
     gap: 10px;
 }
 
-.logo {
-
-}
-
-.logo, .menu {
+.logo, .side-nav-menu {
     border: solid 1px black; /* Remove from final */
 
     margin: 10px;
@@ -43,7 +39,7 @@
     margin-right: 5px;
 }
 
-.menu {
+.side-nav-menu {
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -52,8 +48,34 @@
 /* -- TOP NAV -- */
 .top-nav {
     background-color: var(--main-1);
+    padding: 10px 20px;
 }
 
+.top-nav div {
+    border: solid 1px black; /* Remove later */
+}
+
+.top-nav > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.search, 
+.profile, 
+.greeting, 
+.project-btns {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.greeting p:last-child {
+    margin-top: 5px;
+}
+
+.project-btns button {
+    padding: 5px 10px;
+}
 /* -- CONTENT -- */
 .main {
     background-color: var(--main-2);
